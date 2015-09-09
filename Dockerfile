@@ -28,10 +28,15 @@ ADD envtemplate.py /usr/local/bin/envtemplate.py
 
 ADD init.sh /usr/local/bin/init.sh
 
+RUN chmod g+w /var/www/html
 RUN chmod u+x /usr/local/bin/init.sh
 
 ADD crons.conf /root/crons.conf
 RUN crontab /root/crons.conf
+
+RUN groupadd -g 500 oinstall
+RUN useradd -g 500 -G www-data -u 501 delphix
+
 
 EXPOSE 80
 ENTRYPOINT ["/usr/local/bin/init.sh"]

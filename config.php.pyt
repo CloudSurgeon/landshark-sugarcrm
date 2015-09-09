@@ -51,7 +51,7 @@ $$sugar_config = array (
   'datef' => 'm/d/Y',
   'dbconfig' => 
   array (
-    'db_host_name' => '$db_host_name',
+    'db_host_name' => '$db_host_name:$db_tcp_port',
     'db_host_instance' => 'SQLEXPRESS',
     'db_user_name' => '$db_user_name',
     'db_password' => '$db_password',
