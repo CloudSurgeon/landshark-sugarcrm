@@ -6,20 +6,20 @@ ENV SOURCEFORGE_MIRROR http://downloads.sourceforge.net
 ENV WWW_FOLDER /var/www/html
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y libcurl4-gnutls-dev libpng-dev unzip cron re2c php5-imap python
+    apt-get install -y libcurl4-gnutls-dev libpng-dev unzip cron re2c php5-imap python less vim
 
 RUN docker-php-ext-install mysql curl gd zip mbstring
 #	apt-get install -y php5-mysql php5-imap php5-curl php5-gd curl unzip cron
 
 WORKDIR /tmp
 
-ADD sugar_app_back.tgz /tmp
+#ADD sugar_app_back.tgz /tmp
 
-RUN     rm  -Rf ${WWW_FOLDER}/* && \
-	cp -R /tmp/sugar_app_back/* ${WWW_FOLDER}/ && \
-	chown -R www-data:www-data ${WWW_FOLDER}/* && \
-	chown -R www-data:www-data ${WWW_FOLDER} && \
-	rm -Rf /tmp/Sugar*
+RUN     rm  -Rf ${WWW_FOLDER}/* && #\
+	#cp -R /tmp/sugar_app_back/* ${WWW_FOLDER}/ && \
+	#chown -R www-data:www-data ${WWW_FOLDER}/* && \
+	#chown -R www-data:www-data ${WWW_FOLDER} && \
+	#rm -Rf /tmp/Sugar*
 
 # RUN sed -i 's/^upload_max_filesize = 2M$/upload_max_filesize = 10M/' /usr/local/etc/php/php.ini
 
