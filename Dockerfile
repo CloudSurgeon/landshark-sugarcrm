@@ -15,7 +15,8 @@ WORKDIR /tmp
 
 #ADD sugar_app_back.tgz /tmp
 
-RUN     rm  -Rf ${WWW_FOLDER} && #\
+RUN     rm  -Rf ${WWW_FOLDER}
+#RUN     rm  -Rf ${WWW_FOLDER} && #\
 	#cp -R /tmp/sugar_app_back/* ${WWW_FOLDER}/ && \
 	#chown -R www-data:www-data ${WWW_FOLDER}/* && \
 	#chown -R www-data:www-data ${WWW_FOLDER} && \
