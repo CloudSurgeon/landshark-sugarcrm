@@ -23,9 +23,10 @@ if [ -z "$DATABASE_NAME" ]; then
 fi
 
 if [ -f "/mnt/sugarapp/index.php" ]; then
-	ls -lart /mnt/sugarapp/index.php
-	rm -Rf /var/www/html/*
-	su delphix -c "cp -R /mnt/sugarapp/* /var/www/html/."
+	#ls -lart /mnt/sugarapp/index.php
+	#rm -Rf /var/www/html/*
+	#su delphix -c "cp -R /mnt/sugarapp/* /var/www/html/."
+    ln -s /mnt/sugarapp /var/www/html    
 	chown -R www-data.www-data /var/www/html
 fi
 /usr/local/bin/envtemplate.py -i /usr/local/src/config.php.pyt -o /var/www/html/config.php
