@@ -29,7 +29,7 @@ if [ -f "/mnt/sugarapp/index.php" ]; then
     ln -s /mnt/sugarapp /var/www/html    
 	chown -R www-data.www-data /var/www/html
 fi
-/usr/local/bin/envtemplate.py -i /usr/local/src/config.php.pyt -o /var/www/html/config.php
+su delphix -c "/usr/local/bin/envtemplate.py -i /usr/local/src/config.php.pyt -o /var/www/html/config.php"
 /usr/sbin/cron
 
 rm -Rf /tmp/Sugar* /tmp/sugar*
