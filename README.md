@@ -1,3 +1,4 @@
+First, acknowledgement to [spantree/docker-sugarcrm](https://github.com/Spantree/docker-sugarcrm), from which this container forks.
 ## How to use this image
 
 ### Running with Docker Run
