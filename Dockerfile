@@ -9,7 +9,6 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y libcurl4-gnutls-dev libpng-dev unzip cron re2c php5-imap python less vim
 
 RUN docker-php-ext-install mysql curl gd zip mbstring
-#	apt-get install -y php5-mysql php5-imap php5-curl php5-gd curl unzip cron
 
 WORKDIR /tmp
 
