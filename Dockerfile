@@ -13,16 +13,7 @@ RUN docker-php-ext-install mysql curl gd zip mbstring
 
 WORKDIR /tmp
 
-#ADD sugar_app_back.tgz /tmp
-
 RUN     rm  -Rf ${WWW_FOLDER}
-#RUN     rm  -Rf ${WWW_FOLDER} && #\
-	#cp -R /tmp/sugar_app_back/* ${WWW_FOLDER}/ && \
-	#chown -R www-data:www-data ${WWW_FOLDER}/* && \
-	#chown -R www-data:www-data ${WWW_FOLDER} && \
-	#rm -Rf /tmp/Sugar*
-
-# RUN sed -i 's/^upload_max_filesize = 2M$/upload_max_filesize = 10M/' /usr/local/etc/php/php.ini
 
 ADD config.php.pyt /usr/local/src/config.php.pyt
 ADD envtemplate.py /usr/local/bin/envtemplate.py
